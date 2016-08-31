@@ -30,6 +30,9 @@ for ($i = 0; $i < 3; $i++) {
     echo '对于数列';
     var_dump($origin[$i]);
     echo '<br/>';
+    echo '正确顺序';
+    var_dump($sorted[$i]);
+    echo '<br/>';
     $success = 0;
     $fail = 0;
     foreach ($class as $clas) {

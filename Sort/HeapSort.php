@@ -9,50 +9,59 @@ use pj\Sort\FatherClass;
 
 class HeapSort extends FatherClass implements Sort
 {
+    private $lastUnsort;
     public function __construct(array $parameter)
     {
         parent::__construct($parameter);
+        $this->lastUnsort = count($this->originArray) - 1;
     }
 
     public function sort()
     {
         $this->sortedArray = $this->originArray;
         $first = 0;
-        $last = count($this->sortedArray) - 1;
-        while ($last > $first) {
-            //末节点的父节点的下标
-            $index = floor(($last + 1) / 2) - 1;
-            while ($index >= $first) {
-                $this->branchSort($index, $last);
-                $index--;
-            }
-            $temp = $this->sortedArray[$first];
-            $this->sortedArray[$first] = $this->sortedArray[$last];
-            $this->sortedArray[$last] = $temp;
-            $last--;
+        $index = floor(($this->lastUnsort + 1) / 2) - 1;
+        while ($index >= $first) {
+            $this->downAdjust($index);
+            $index--;
+        }
+        while ($this->lastUnsort > 0) {
+            $this->exchage($first, $this->lastUnsort);
+            $this->lastUnsort --;
+            $this->downAdjust(0);
         }
     }
 
-    private function branchSort($index, $last)
+    private function downAdjust($root)
     {
-        $largest = $index;
-        //左、右子树的下标
-        $lChild = ($index + 1) * 2 - 1;
-        $rChild = $lChild + 1;
-        if ($this->sortedArray[$lChild] > $this->sortedArray[$largest]) {
-            $largest = $lChild;
-        }
-        //如果存在右子树
-        if ($rChild <= $last) {
-            if ($this->sortedArray[$rChild] > $this->sortedArray[$largest]) {
-                $largest = $rChild;
+        $lagest = $root;
+        while (1) {
+            $lChild = ($root + 1) * 2 - 1;
+            if ($lChild <= $this->lastUnsort) {
+                if ($this->sortedArray[$lChild] > $this->sortedArray[$lagest]) {
+                    $lagest = $lChild;
+                }
+            } else {
+                break;
+            }
+            $rChild = $lChild + 1;
+            if($rChild <= $this->lastUnsort){
+                if ($this->sortedArray[$rChild] > $this->sortedArray[$lagest]) {
+                    $lagest = $rChild;
+                }
+            }
+            if ($lagest === $root) {
+                break;
+            } else {
+                $this->exchage($root, $lagest);
+                $root = $lagest;
             }
         }
-        //如果不是父节点最大
-        if ($largest !== $index) {
-            $temp = $this->sortedArray[$index];
-            $this->sortedArray[$index] = $this->sortedArray[$largest];
-            $this->sortedArray[$largest] = $temp;
-        }
+    }
+    private function exchage($one, $another)
+    {
+        $temp = $this->sortedArray[$one];
+        $this->sortedArray[$one] = $this->sortedArray[$another];
+        $this->sortedArray[$another] = $temp;
     }
 }
