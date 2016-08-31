@@ -22,7 +22,7 @@ class InsertionSort extends FatherClass implements Sort
         $end = count($this->sortedArray) - 1;
         while ($end >= $index) {
             $basic = $this->sortedArray[$index];
-            $position = $this->dichotomySearch($index-1, $start, $basic);
+            $position = $this->dichotomySearch($index - 1, $start, $basic);
             $temp = $this->sortedArray[$index];
             for ($i = $index; $i > $position; $i--) {
                 $this->sortedArray[$i] = $this->sortedArray[$i - 1];
@@ -31,8 +31,8 @@ class InsertionSort extends FatherClass implements Sort
             $index++;
         }
     }
-    
-    private function dichotomySearch($end, $start,$basic)
+
+    private function dichotomySearch($end, $start, $basic)
     {
         if ($end - $start > 1) {
             $middle = floor(($end + $start) / 2);

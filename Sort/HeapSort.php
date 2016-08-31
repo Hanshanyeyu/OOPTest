@@ -32,7 +32,7 @@ class HeapSort extends FatherClass implements Sort
             $last--;
         }
     }
-    
+
     private function branchSort($index, $last)
     {
         $largest = $index;

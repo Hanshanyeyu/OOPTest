@@ -6,10 +6,12 @@ include_once 'FatherClass.php';
 
 use pj\Sort\Sort;
 use pj\Sort\FatherClass;
+
 class QuickSort extends FatherClass implements Sort
 {
     private $start;
     private $end;
+
     public function __construct(array $parameter)
     {
         parent::__construct($parameter);

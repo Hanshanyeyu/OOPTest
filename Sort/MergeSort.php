@@ -6,10 +6,12 @@ include_once 'FatherClass.php';
 
 use pj\Sort\Sort;
 use pj\Sort\FatherClass;
+
 class MergeSort extends FatherClass implements Sort
 {
     private $first;
     private $last;
+
     public function __construct(array $parameter)
     {
         parent::__construct($parameter);
@@ -62,7 +64,8 @@ class MergeSort extends FatherClass implements Sort
         }
     }
 
-    private function mSort($last, $first){
+    private function mSort($last, $first)
+    {
         if ($last !== $first) {
             if ($this->sortedArray[$first] > $this->sortedArray[$last]) {
                 $temp = $this->sortedArray[$first];
