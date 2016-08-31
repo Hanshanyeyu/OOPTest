@@ -3,7 +3,7 @@ namespace pj\DesignPattern;
 
 class Single
 {
-    public static $single;
+    public static $single = null;
 
     private function __construct()
     {
