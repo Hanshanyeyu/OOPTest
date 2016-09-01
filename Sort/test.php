@@ -8,11 +8,11 @@ include_once 'MergeSort.php';
 include_once 'QuickSort.php';
 include_once 'SelectionSort.php';
 
-use \pj\Sort\HeapSort;
-use \pj\Sort\InsertionSort;
-use \pj\Sort\MergeSort;
-use \pj\Sort\QuickSort;
-use \pj\Sort\SelectionSort;
+use pj\Sort\HeapSort;
+use pj\Sort\InsertionSort;
+use pj\Sort\MergeSort;
+use pj\Sort\QuickSort;
+use pj\Sort\SelectionSort;
 
 $class = ['HeapSort', 'InsertionSort', 'MergeSort', 'QuickSort', 'SelectionSort'];
 $origin = [
@@ -25,7 +25,7 @@ $sorted = [
     [-890, 34, 67, 78, 125, 234, 435, 546, 634, 87432],
     [-2534, 23, 54, 65, 76, 87, 234, 346, 432, 897]
 ];
-$var = '\pj\Sort';
+$var = 'pj\Sort';
 for ($i = 0; $i < 3; $i++) {
     echo '对于数列';
     var_dump($origin[$i]);
