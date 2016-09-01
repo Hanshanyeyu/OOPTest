@@ -25,29 +25,42 @@ $sorted = [
     [-890, 34, 67, 78, 125, 234, 435, 546, 634, 87432],
     [-2534, 23, 54, 65, 76, 87, 234, 346, 432, 897]
 ];
-$var = 'pj\Sort';
-for ($i = 0; $i < 3; $i++) {
-    echo '对于数列';
-    var_dump($origin[$i]);
-    echo '<br/>';
-    echo '正确顺序';
-    var_dump($sorted[$i]);
-    echo '<br/>';
-    $success = 0;
-    $fail = 0;
-    foreach ($class as $clas) {
-        echo $clas . '排列的结果为: <br/>';
-        $clas = $var . '\\' . $clas;
-        $temp = new $clas($origin[$i]);
-        $temp->sort();
-        if ($temp->getSortedArray() === $sorted[$i]) {
-            echo '<font style="color:green">成功</font>';
-            $success++;
-        } else {
-            echo '<font style="color:red">失败</font>';
-            $fail++;
-        }
-        echo '<br/>';
-    }
-    echo "排列共成功 $success 次，失败 $fail 次<br/>";
-}
+
+//能跑的
+//$temp = new HeapSort($origin[0]);
+
+//有问题的
+$param = $class[0];
+$temp = new $param($origin[0]);
+
+$temp->sort();
+var_dump($temp->getSortedArray());
+
+
+
+//$var = 'pj\Sort';
+//for ($i = 0; $i < 3; $i++) {
+//    echo '对于数列';
+//    var_dump($origin[$i]);
+//    echo '<br/>';
+//    echo '正确顺序';
+//    var_dump($sorted[$i]);
+//    echo '<br/>';
+//    $success = 0;
+//    $fail = 0;
+//    foreach ($class as $clas) {
+//        echo $clas . '排列的结果为: <br/>';
+//        $clas = $var . '\\' . $clas;
+//        $temp = new $clas($origin[$i]);
+//        $temp->sort();
+//        if ($temp->getSortedArray() === $sorted[$i]) {
+//            echo '<font style="color:green">成功</font>';
+//            $success++;
+//        } else {
+//            echo '<font style="color:red">失败</font>';
+//            $fail++;
+//        }
+//        echo '<br/>';
+//    }
+//    echo "排列共成功 $success 次，失败 $fail 次<br/>";
+//}
