@@ -1,8 +1,8 @@
 {
   "autoload": {
     "psr-4": {
-      "DesignPattern\\":["OOPTest/DesignPattern"],
-      "Sort\\": ["OOPTest/Sort"]
+      "DesignPattern\\":["DesignPattern"],
+      "Sort\\": ["Sort"]
     }
   }
 }

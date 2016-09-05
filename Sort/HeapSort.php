@@ -10,6 +10,7 @@ use pj\Sort\FatherClass;
 class HeapSort extends FatherClass implements Sort
 {
     private $lastUnsort;
+
     public function __construct(array $parameter)
     {
         parent::__construct($parameter);
@@ -27,7 +28,7 @@ class HeapSort extends FatherClass implements Sort
         }
         while ($this->lastUnsort > 0) {
             $this->exchage($first, $this->lastUnsort);
-            $this->lastUnsort --;
+            $this->lastUnsort--;
             $this->downAdjust(0);
         }
     }
@@ -45,7 +46,7 @@ class HeapSort extends FatherClass implements Sort
                 break;
             }
             $rChild = $lChild + 1;
-            if($rChild <= $this->lastUnsort){
+            if ($rChild <= $this->lastUnsort) {
                 if ($this->sortedArray[$rChild] > $this->sortedArray[$lagest]) {
                     $lagest = $rChild;
                 }
@@ -58,6 +59,7 @@ class HeapSort extends FatherClass implements Sort
             }
         }
     }
+
     private function exchage($one, $another)
     {
         $temp = $this->sortedArray[$one];
