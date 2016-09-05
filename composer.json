@@ -1,5 +1,5 @@
 {
-  "name": "pj919715177/OOPTest",
+  "name": "pj919715177/oop-test",
   "autoload": {
     "psr-4": {
       "Sort\\": "Sort",
