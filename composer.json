@@ -2,8 +2,8 @@
   "name": "pj919715177/oop-test",
   "autoload": {
     "psr-4": {
-      "Sort\\": "Sort",
-      "DesignPattern\\": "DesignPattern"
+      "Pj\\Sort\\": "Sort/",
+      "Pj\\DesignPattern\\": "DesignPattern/"
     }
   }
 }
