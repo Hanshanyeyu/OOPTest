@@ -1,5 +1,5 @@
 <?php
-namespace pj\Sort;
+namespace Pj\Sort;
 
 class FatherClass
 {

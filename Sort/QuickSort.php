@@ -1,11 +1,11 @@
 <?php
-namespace pj\Sort;
+namespace Pj\Sort;
 
 include_once 'Sort.php';
 include_once 'FatherClass.php';
 
-use pj\Sort\Sort;
-use pj\Sort\FatherClass;
+use Pj\Sort\Sort;
+use Pj\Sort\FatherClass;
 
 class QuickSort extends FatherClass implements Sort
 {

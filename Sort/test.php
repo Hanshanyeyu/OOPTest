@@ -1,5 +1,5 @@
 <?php
-namespace pj\Sort;
+namespace Pj\Sort;
 include_once 'HeapSort.php';
 include_once 'InsertionSort.php';
 include_once 'MergeSort.php';
