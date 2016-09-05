@@ -1,4 +1,5 @@
 {
+  "name": "pj919715177/OOPTest",
   "autoload": {
     "psr-4": {
       "Sort\\": "Sort",
